@@ -1,0 +1,9 @@
+<h1>Welcome to Verbatim</h1>
+
+
+<h3>Here are a list of your speeches</h3>
+<% @speeches.each do |speech|%>
+	<li><%=speech.title%></li>
+<%end%>
+
+<li><%= link_to 'New Speech', new_memorize_path %></li>
