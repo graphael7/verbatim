@@ -16,18 +16,17 @@ class MemorizeController < ApplicationController
 			sects = []
 			x = 0
 			number_of_sections.times{
-			if @speech.body.length < 50
-				sects << @speech.body[x..x+50]
+			if @speech.body.length < 100
+				sects << @speech.body[x..x+100]
 			else
-				sects << @speech.body[x..x+50]
-				x += 50
+				sects << @speech.body[x..x+100]
+				x += 100
 			end
 			}
 			sects.each do |sect|
 				@speech.sections.create!(body: sect)
-				binding.pry
 			end
-
+			binding.pry
 
 			redirect_to memorize_index_path
   			# success
